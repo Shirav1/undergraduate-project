@@ -1,0 +1,32 @@
+﻿@page
+@model WebApplication1.Pages.Clients.viewModel
+@{
+}
+ 
+<br />
+<h2> List of clients </h2>
+<a class="btn btn-primary btn-sm" href='https://localhost:7199/Clients/create'>add transaction for client </a> 
+<table class='table'>
+    <thead>
+        <tr>
+            <th>TransactionID</th>
+            <th> Amount</th>
+            <th> TransactionTypeID</th>
+            <th> ClientID</th>
+            <th> Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.ViewClients)
+        {
+            <tr>
+                <td>@item.TransactionID</td>
+                <td>@item.Amount</td>
+                <td>@item.TransactionTypeId</td>
+                <td>@item.ClientID</td>
+                <td>@item.Comment</td>
+    
+            </tr>
+        }
+    </tbody>
+</table>

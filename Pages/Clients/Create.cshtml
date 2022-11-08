@@ -1,0 +1,63 @@
+﻿@page
+@model WebApplication1.Pages.Clients.CreateModel
+@{
+}
+<br />
+<h2>Add new Transaction</h2>
+if(Model.errormessage.length>0){
+    <div class= 'alert  alert-warning alert-dismissible fade show' role='alert'>
+        <strong>Model.errormessage</strong>
+        <button> type="button" class="btn-class" data-bs-dismiss='alert' aria-label='close'</button>
+    </div>
+
+}
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> TransactionID</label>
+        <div class="col-sm-6">
+            <input type="number" class="form-control" name="number" value="@Model.clientTransaction.TransactionID" /> 
+        </div>
+    </div>
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Amount</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Amount" value="@Model.clientTransaction.Amount" /> 
+        </div>
+    </div>
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Transaction Type Id</label>
+        <div class="col-sm-6">
+            <input type="number" class="form-control" name="TTID" value="@Model.clientTransaction.TransactionTypeId" /> 
+        </div>
+    </div>
+
+     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Client Id</label>
+        <div class="col-sm-6">
+            <input type="number" class="form-control" name="ID" value="@Model.clientTransaction.ClientID" /> 
+        </div>
+        <br />
+         <div class="row mb-3">
+        <label class="col-sm-3 col-form-label"> Comment </label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Comment" value="@Model.clientTransaction.Comment" /> 
+        </div>
+    if (Model.sucessmessage.length>0){
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Model.successmessage</strong>
+                    <button type="button" class='btn-close' data-bs-dismiss='alert' aria-label="close"> close</button>
+                </div>
+            </div>
+        </div>
+    }
+     <div class="row mb-3">
+         <div class="offset-sm-3 col-sm-3 d-grid">
+        <button type="submit" class="btn-primary">submit</button>
+        </div>
+        <div class="col-sm-3 d-grid">
+           <a class="btn btn-outline-primary" href="/" role="button"> cancel</a>
+        </div>
+    </div>
+</form>
